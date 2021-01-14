@@ -1,0 +1,30 @@
+{
+  "name": "bar-graphify",
+  "version": "0.0.7",
+  "description": "A simple node module to create bar graphs.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "cd dist && node .",
+    "build": "rmdir dist /S /Q && mkdir dist && tsc",
+    "test": "npm run-script build && node test.js",
+    "publish:stable": "npm run-script build && cd dist && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheStyxo/bar-graphify.git"
+  },
+  "keywords": [
+    "bar",
+    "node",
+    "graph"
+  ],
+  "author": "Paras Deshpande",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheStyxo/bar-graphify/issues"
+  },
+  "homepage": "https://github.com/TheStyxo/bar-graphify#readme",
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  }
+}

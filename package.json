@@ -1,13 +1,14 @@
 {
   "name": "bar-graphify",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A simple and lightweight node module to create bar graphs.",
   "main": "src/index.js",
   "scripts": {
     "start": "cd dist && node .",
-    "build": "rmdir dist /S /Q && mkdir dist && tsc",
+    "build": "rmdir dist /S /Q && mkdir dist && tsc && npm run-script postbuild",
     "test": "npm run-script build && node test.js",
-    "publish:stable": "npm run-script build && cd dist && npm publish"
+    "publish:stable": "npm run-script build && cd dist && npm publish",
+    "postbuild": "copy README.MD dist\\README.MD"
   },
   "repository": {
     "type": "git",

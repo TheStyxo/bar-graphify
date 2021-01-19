@@ -1,7 +1,7 @@
 {
   "name": "bar-graphify",
-  "version": "0.0.7",
-  "description": "A simple node module to create bar graphs.",
+  "version": "0.0.8",
+  "description": "A simple and lightweight node module to create bar graphs.",
   "main": "src/index.js",
   "scripts": {
     "start": "cd dist && node .",

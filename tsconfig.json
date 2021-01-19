@@ -23,8 +23,7 @@
     "include": [
         "src",
         "config",
-        "package.json",
-        "README.MD"
+        "package.json"
     ],
     "exclude": [
         "package-lock.json",

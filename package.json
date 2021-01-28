@@ -1,6 +1,6 @@
 {
   "name": "bar-graphify",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "A simple and lightweight node module to create bar graphs.",
   "main": "src/index.js",
   "scripts": {

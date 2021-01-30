@@ -15,7 +15,7 @@ export class Graph {
     protected readonly firstCollumnWidth: number;
     protected readonly collumnSeparator: string;
     protected readonly firstCollumnSeparator: string;
-    protected readonly fillHeights: number[];
+    protected fillHeights: number[];
     protected generatedCollumns: Array<Array<string> | undefined> = [];
     //Override the toString() method
     toString(): string {
@@ -153,7 +153,7 @@ export class Graph {
      * Change the location of the cursor or remove the cursor
      * @param {number} newCursorLocation The index of the collumn where the new cursor should be (starts from 1 as 0 is the labels)
      */
-    setCursor(newCursorLocation: number) {
+    public setCursor(newCursorLocation: number): this {
         //If the collumns are not generated yet
         if (!this.generatedCollumns || !this.generatedCollumns.length) this._generateAll();
 
@@ -181,7 +181,7 @@ export class Graph {
      * Set the collumn height/heights by providing an object {collumn: number, height:number} or an array of that
      * @param {CollumnHeight[]} heights 
      */
-    setCollumnHeight(...heights: CollumnHeight[]) {
+    public setCollumnHeight(...heights: CollumnHeight[]): this {
         //If the collumns are not generated yet
         if (!this.generatedCollumns || !this.generatedCollumns.length) this._generateAll();
 
@@ -196,6 +196,16 @@ export class Graph {
             this._generateCollumn(collumn);
         }
 
+        this._render();
+        return this;
+    }
+
+    /**
+     * Set the collumn height array
+     */
+    _setCollumnHeightArray(array: number[]) {
+        this.fillHeights = array;
+        this._generateAll();
         this._render();
     }
 }
